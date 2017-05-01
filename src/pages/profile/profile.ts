@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ToastController,Platform} from 'ionic-angular';
 
 /**
  * Generated class for the Profile page.
@@ -14,9 +14,35 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class Profile {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  mode = false;
+  isAndriod : boolean = false;
+  segments : string = "followers";
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,public toastCtrl : ToastController,public platform : Platform) {
+    this.isAndriod = platform.is('andriod');
   }
 
+
+   public showToastMessage(){
+      if(this.mode){
+      let toast = this.toastCtrl.create({
+          message : "Awesome, you are gonna meet incredible people & create memories today",
+          duration : 2000,
+      });
+      toast.present();
+   }
+   else{
+      let toast = this.toastCtrl.create({
+          message : "Come back and enable this again, to meet and Share memories",
+          showCloseButton : true,
+          closeButtonText : 'Ok',
+       //   duration : 2000,
+
+      });
+      toast.present();
+   }
+
+   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad Profile');
   }
