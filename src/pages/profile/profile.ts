@@ -17,6 +17,7 @@ export class Profile {
   mode = false;
   isAndriod : boolean = false;
   segments : string = "followers";
+  broadcastMessage : string = "I am gonna shop today";
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public toastCtrl : ToastController,public platform : Platform) {
     this.isAndriod = platform.is('andriod');
