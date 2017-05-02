@@ -16,64 +16,22 @@
 <ion-content>
 
   <ion-card>
-
-    <ion-card-content>
-      <ion-avatar>
-      <img src="assets/img/nin-live.png"  />
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="assets/img/nin-live.png"  />
       </ion-avatar>
-      <ion-card-title>Sivasakthi Saravanan</ion-card-title>
-      <ion-row no-padding>
-         <ion-col text-left>
-           <ion-icon name="pin"></ion-icon>
-          Appleton,United States
-         </ion-col>
-         </ion-row>
-         <ion-row no-padding>
-          <ion-col>
-           <ion-label>Meet a Stranger</ion-label>
-           </ion-col>
-          <ion-col>
-             <ion-toggle color="royal"   [(ngModel)]="mode"   (ionChange)="showToastMessage()"></ion-toggle>
-          </ion-col>
-           </ion-row>
-       <ion-row no-padding>
-        <ion-col>
-        <ion-label>Slogan : </ion-label>
-      Be a Warrier
-        </ion-col>
-      </ion-row>
-       <ion-toolbar no-border-top>
-    <ion-segment [(ngModel)]="segments">
-        <ion-segment-button value="followers">
-          My Followers
-        </ion-segment-button>
-        <ion-segment-button value="following">
-        Following
-        </ion-segment-button>
-    </ion-segment>
-    </ion-toolbar>
-    <ion-content>
-      <div [ngSwitch]="segments">
-        <ion-list *ngSwitchCase="'followers'">
-          <ion-item>
-            <ion-thumbnail item-left>
-              <img src="assets/img/nin-live.png">
-              <h2>Thala</h2>
-            </ion-thumbnail>
-          </ion-item>
-        </ion-list>
-        <ion-list *ngSwitchCase="'following'">
-          <ion-item>
-            <ion-thumbnail item-left>
-              <img src="assets/img/nin-live.png">
-              <h2> Super thala</h2>
-            </ion-thumbnail>
-          </ion-item>
-        </ion-list>
-      </div>
-    </ion-content>
-    </ion-card-content>
+      <h2> Sivasakthi Saravanan </h2>
+      <p>24 , <ion-icon name="pin"></ion-icon> Appleton,United States</p>
+    </ion-item>
+      <ion-card-content>
+
+        </ion-card-content>
 
   </ion-card>
+  <ion-card>
+    <ion-item><ion-label>Meet & Chat</ion-label>   <ion-toggle color="royal"   [(ngModel)]="mode"   (ionChange)="showToastMessage()"></ion-toggle> </ion-item>
+  <ion-item>Feed</ion-item>
+  <ion-item>Sign Out</ion-item>
 
-</ion-content>
+  </ion-card>
+  </ion-content>

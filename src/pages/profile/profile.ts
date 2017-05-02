@@ -33,7 +33,7 @@ export class Profile {
    }
    else{
       let toast = this.toastCtrl.create({
-          message : "Come back and enable this again, to meet and Share memories",
+          message : "Come back and enable this again, to meet and share memories",
           showCloseButton : true,
           closeButtonText : 'Ok',
        //   duration : 2000,
