@@ -2,8 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
+import {Geolocation} from '@ionic-native/geolocation';
+
 import { MyApp } from './app.component';
-import {Feed,HomePage,ListPage,People,Profile,Notification} from '../pages/pages';
+import {Feed,HomePage,ListPage,People,Profile,Notification,Chat} from '../pages/pages';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -16,7 +18,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     Feed,
     People,
     Profile,
-    Notification
+    Notification,
+    Chat
   ],
   imports: [
     BrowserModule,
@@ -30,11 +33,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     Feed,
     People,
     Profile,
-    Notification
+    Notification,
+    Chat
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

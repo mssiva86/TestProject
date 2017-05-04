@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ToastController,Platform} from 'ionic-angular';
+import {Geolocation} from '@ionic-native/geolocation';
+
 
 /**
  * Generated class for the Profile page.
@@ -19,7 +21,11 @@ export class Profile {
   segments : string = "followers";
   broadcastMessage : string = "I am gonna shop today";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public toastCtrl : ToastController,public platform : Platform) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public toastCtrl : ToastController,
+              public platform : Platform,
+              public geolocation : Geolocation) {
     this.isAndriod = platform.is('andriod');
   }
 
@@ -31,6 +37,18 @@ export class Profile {
           duration : 2000,
       });
       toast.present();
+      this.geolocation.getCurrentPosition().then((resp) => {
+          console.log(resp.coords.longitude);
+          console.log(resp.coords.latitude);
+      }).catch((error) => {
+        console.log('Error getting location',error);
+      });
+
+   /*   let watch = this.geolocation.watchPosition();
+      watch.subscribe((data) => {
+          console.log(data.coords.longitude);
+          console.log(data.coords.latitude);
+      }); */
    }
    else{
       let toast = this.toastCtrl.create({
@@ -47,5 +65,7 @@ export class Profile {
   ionViewDidLoad() {
     console.log('ionViewDidLoad Profile');
   }
+
+
 
 }
