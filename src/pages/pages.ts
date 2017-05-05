@@ -5,3 +5,4 @@ export * from './people/people';
 export * from './profile/profile';
 export * from './notification/notification';
 export * from './chat/chat';
+export * from './login-page/login-page';
