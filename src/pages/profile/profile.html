@@ -24,12 +24,20 @@
       <p>24 , <ion-icon name="pin"></ion-icon> Appleton,United States</p>
     </ion-item>
       <ion-card-content>
-           <ion-label>{{broadcastMessage}}</ion-label>
+        <button ion-item class="small_font">
+           {{broadcastMessage}}
+        </button>
       </ion-card-content>
 
   </ion-card>
   <ion-card>
     <ion-item class="small_font"><ion-label>Meet & Chat</ion-label>   <ion-toggle color="royal"   [(ngModel)]="mode"   (ionChange)="showToastMessage()"></ion-toggle> </ion-item>
+    <button ion-item class="small_font">
+      Followers
+    </button>
+    <button ion-item class="small_font">
+      Following
+    </button>
   <ion-item  class="small_font">Feed</ion-item>
   <ion-item  class="small_font">Sign Out</ion-item>
 

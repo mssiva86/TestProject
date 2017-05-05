@@ -13,6 +13,18 @@
 </ion-header>
 
 
-<ion-content padding>
-<h2> People </h2>
+<ion-content no-padding>
+<ion-card>
+  <ion-card-header>People NearBy
+  </ion-card-header>
+  <ion-list *ngFor = "let user of users">
+    <button ion-item>
+      <ion-avatar item-left>
+        <img src="assets/img/nin-live.png"  />
+      </ion-avatar>
+      <h4>{{user.name}}</h4>
+       <p>{{user.age}}, <ion-icon name="pin"></ion-icon> {{ user.city}} ,  {{ user.country }}</p>
+    </button>
+  </ion-list>
+</ion-card>
 </ion-content>
